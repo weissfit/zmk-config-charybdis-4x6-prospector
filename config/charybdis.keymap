@@ -40,11 +40,6 @@
 };
 
 / {
-  trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&vtrackball>;
-    };
-
   behaviors {
     u_mt: u_mt {
             compatible = "zmk,behavior-hold-tap";

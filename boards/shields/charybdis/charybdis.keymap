@@ -1,0 +1,26 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
+
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&vtrackball>;
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        Base {
+            bindings = <
+&kp ESC         &kp LS(NUMBER_1)  &kp LS(N2)  &kp LS(N3)          &kp LS(N4)     &kp LS(N5)      &kp LS(N6)  &kp LS(N7)    &kp LS(N8)           &kp LS(N9)  &kp LS(N0)  &kp BACKSPACE
+&kp GRAVE       &kp Q             &kp W       &kp E               &kp R          &kp T           &kp Y       &kp U         &kp I                &kp O       &kp P       &kp LEFT_BRACKET
+&kp TAB         &kp A             &kp S       &u_mt LEFT_SHIFT D  &kp F          &kp G           &kp H       &kp J         &u_mt RIGHT_SHIFT K  &kp L       &kp SEMI    &kp APOS
+&kp LEFT_SHIFT  &kp Z             &kp X       &kp C               &kp V          &kp B           &kp N       &kp M         &kp COMMA            &kp DOT     &kp FSLH    &u_mt RIGHT_SHIFT RIGHT_BRACKET
+                                              &kp BACKSPACE       &u_lt 5 SPACE  &mo 1           &kp LCTRL   &kp LEFT_WIN
+                                                                  &mo 2          &kp LEFT_ALT    &kp ENTER
+            >;
+        };
+    };
+};
