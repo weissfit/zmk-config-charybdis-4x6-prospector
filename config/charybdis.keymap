@@ -117,22 +117,6 @@
         };
     };
 
-    macros {
-        macro1: macro1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp M &kp A &kp C &kp R &kp O &kp M &kp A &kp C &kp R &kp O &kp N1>;
-            label = "MACRO1";
-        };
-
-        macro2: macro2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp M &kp A &kp C &kp R &kp O &kp M &kp A &kp C &kp R &kp O &kp N2>;
-            label = "MACRO2";
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
