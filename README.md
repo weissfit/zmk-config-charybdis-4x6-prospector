@@ -1,9 +1,8 @@
 # ZMK CONFIG FOR THE CHARYBDIS 4X6 WIRELESS SPLIT KEYBOARD WITH PRISPECTOR
 
-## Keymap customization
+## Keymap
 Just fork this repo and make your own keymap with [Keymap Editor](https://nickcoutsos.github.io/keymap-editor/)
 
-## Keymap
 This is gukas's keymap for Charybdis
 Generated with [Keymap Drawer](https://github.com/caksoylar/keymap-drawer-web/)
 ![gukas keymap](/docs/keymap.svg)
