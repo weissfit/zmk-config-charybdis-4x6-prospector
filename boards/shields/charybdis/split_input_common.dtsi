@@ -1,7 +1,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 
-#define DEF 0
+#define BASE 0
 #define MOUSE 1
 #define SYM 2
 #define NUM 3
@@ -30,12 +30,12 @@
     };
 
     scroll {
-      layers = <SYM>;
+      layers = <GENSHIN>;
       input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 3>, <&zip_xy_to_scroll_mapper>;
     };
 
     move {
-      layers = <DEF MOUSE>;
+      layers = <BASE MOUSE>;
       input-processors = <&auto_mouse_layer MOUSE 5000>;
     };
   };
@@ -44,7 +44,6 @@
     compatible = "zmk,input-processor-temp-layer";
     #input-processor-cells = <2>;
     require-prior-idle-ms = <500>;
-    excluded-positions = <30 31 32 16 17 18 10 11 12 13 22 23>;
   };
 };
 
