@@ -151,7 +151,7 @@
     };
   };
   chosen {
-    zmk,physical-layout = &charybdis_5col_layout;
+    zmk,physical-layout = &default_transform;
   };
 
   keymap {
