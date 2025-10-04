@@ -115,6 +115,15 @@
 
             mods = <(MOD_LSFT)>;
         };
+
+        u_ltm: u_ltm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "U_LTM";
+            #binding-cells = <2>;
+            tapping_term_ms = <U_TAPPING_TERM>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&mkp>;
+        };
     };
 
     combos {
@@ -189,12 +198,12 @@
         BASE {
             display-name = "BASE";
             bindings = <
-&kp ESC         &kp LS(NUMBER_1)  &kp LS(N2)  &kp LS(N3)          &kp LS(N4)     &kp LS(N5)      &kp LS(N6)  &kp LS(N7)    &kp LS(N8)           &kp LS(N9)  &kp LS(N0)  &kp BACKSPACE
-&kp GRAVE       &kp Q             &kp W       &kp E               &kp R          &kp T           &kp Y       &kp U         &kp I                &kp O       &kp P       &kp LEFT_BRACKET
-&kp TAB         &kp A             &kp S       &u_mt LEFT_SHIFT D  &kp F          &kp G           &kp H       &kp J         &u_mt RIGHT_SHIFT K  &kp L       &kp SEMI    &kp APOS
-&kp LEFT_SHIFT  &kp Z             &kp X       &kp C               &kp V          &kp B           &kp N       &kp M         &kp COMMA            &kp DOT     &kp FSLH    &u_mt RIGHT_SHIFT RIGHT_BRACKET
-                                              &mkp MCLK           &u_lt 5 SPACE  &mo 1           &kp LCTRL   &kp LEFT_WIN
-                                                                  &mo 2          &kp LEFT_ALT    &kp ENTER
+&kp ESC         &kp LS(NUMBER_1)  &kp LS(N2)  &kp LS(N3)          &kp LS(N4)  &kp LS(N5)      &kp LS(N6)  &kp LS(N7)    &kp LS(N8)           &kp LS(N9)  &kp LS(N0)  &kp BACKSPACE
+&kp GRAVE       &kp Q             &kp W       &kp E               &kp R       &kp T           &kp Y       &kp U         &kp I                &kp O       &kp P       &kp LEFT_BRACKET
+&kp TAB         &kp A             &kp S       &u_mt LEFT_SHIFT D  &kp F       &kp G           &kp H       &kp J         &u_mt RIGHT_SHIFT K  &kp L       &kp SEMI    &kp APOS
+&kp LEFT_SHIFT  &kp Z             &kp X       &kp C               &kp V       &kp B           &kp N       &kp M         &kp COMMA            &kp DOT     &kp FSLH    &u_mt RIGHT_SHIFT RIGHT_BRACKET
+                                              &u_ltm 5 MB3        &kp SPACE   &mo 1           &kp LCTRL   &kp LEFT_WIN
+                                                                  &mo 2       &kp LEFT_ALT    &kp ENTER
             >;
         };
 
