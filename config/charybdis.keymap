@@ -36,8 +36,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        BASE {
-            display-name = "BASE";
+        Base {
             bindings = <
 &kp ESC         &kp N1     &kp N2   &kp N3          &kp N4          &kp N5            &kp N6          &kp N7           &kp N8       &kp N9         &kp N0       &kp BSPC
 &kp TAB         &kp DE_Z   &kp DE_Y &kp DE_U        &kp DE_A        &kp DE_Q          &kp DE_P        &kp DE_B         &kp DE_M     &kp DE_L       &kp DE_F     &kp DE_J
@@ -46,66 +45,100 @@
                                   &mo 1             &kp SPACE       &kp LEFT_WIN    &lt 2 ENTER     &kp BACKSPACE 
                                                     &kp LEFT_ALT    &kp SPACE         &kp DOWN_ARROW
             >;
+
+            trackball-bindings = <&tmv_coarse>;
         };
 
-        NAVNUM {
-            display-name = "NAVNUM";
+        s_char {
             bindings = <
-&kp F12  &kp F1  &kp F2        &kp F3        &kp F4         &kp F5        &kp F6           &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
-&none    &none   &kp HOME      &kp UP        &kp END        &kp INSERT    &kp PAGE_UP      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &none
-&none    &none   &kp LEFT      &kp DOWN      &kp RIGHT      &kp ENTER     &kp PAGE_DOWN    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0  &none
-&none    &none   &kp LC(LEFT)  &kp CAPSLOCK  &kp LC(RIGHT)  &kp DELETE    &kp PRINTSCREEN  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
-                               &trans        &trans         &trans        &trans           &trans
-                                             &mo 3          &trans        &trans
+&trans     &kp LG(DE_N6)     &kp LG(DE_N7)  &kp LG(DE_N8)    &kp LG(DE_N9)  &kp LG(DE_N0)    &none      &none         &none             &none         &none              &none
+&kp TAB    &kp LC(LS(DE_T))  &kp LC(W)      &kp LC(LS(TAB))  &kp LC(TAB)    &kp LC(DE_T)     &kp PG_UP  &kp LC(LEFT)  &kp LC(NUMBER_1)  &kp LC(J)     &kp LC(RIGHT)      &kp HOME
+&kp LCTRL  &mo 5             &mo 4          &mo 3            &mo 2          &none            &kp PG_DN  &kp LEFT      &kp UP            &kp DOWN      &kp RIGHT          &kp END
+&kp LSHFT  &kp LEFT          &kp UP         &kp DOWN         &kp RIGHT      &kp LG(LS(DE_Q)) &none      &kp DE_MINUS  &kp DE_SEMICOLON  &kp DE_COLON  &kp DE_UNDERSCORE  &kp ESC
+                                            &kp LEFT_WIN     &kp SPACE      &trans           &kp ENTER  &kp BACKSPACE
+                                                             &none          &none            &trans
             >;
         };
 
-        SYMBOL {
-            display-name = "SYMBOL";
+        szch {
             bindings = <
-&none  &none          &kp AT_SIGN           &kp HASH   &kp DOLLAR             &none        &none        &none             &kp CARET       &none              &none            &none
-&none  &none          &kp LESS_THAN         &kp EQUAL  &kp GREATER_THAN       &kp GRAVE    &none        &kp LEFT_BRACKET  &kp UNDERSCORE  &kp RIGHT_BRACKET  &none            &none
-&none  &kp BACKSLASH  &kp LEFT_PARENTHESIS  &kp MINUS  &kp RIGHT_PARENTHESIS  &kp PLUS     &kp PERCENT  &kp LEFT_BRACE    &kp SEMICOLON   &kp RIGHT_BRACE    &kp EXCLAMATION  &none
-&none  &none          &kp ASTERISK          &kp COLON  &kp SLASH              &none        &none        &kp PIPE          &kp TILDE       &kp AMPERSAND      &none            &none
-                                            &trans     &trans                 &mo 3        &trans       &trans
-                                                       &trans                 &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans       &trans              &trans                &trans         &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans       &kp DE_EXCLAMATION  &kp DE_SINGLE_QUOTE   &kp DE_PLUS    &kp DE_EQUAL     &kp DE_GRAVE
+&trans  &trans  &trans  &trans  &trans  &trans  &trans       &kp DE_QUESTION     &kp DE_DOUBLE_QUOTES  &kp DE_HASH    &kp DE_ASTERISK  &kp DE_CARET
+&trans  &trans  &trans  &trans  &trans  &trans  &kp DE_EURO  &kp DE_AT           &kp DE_AMPERSAND      &kp DE_DOLLAR  &kp DE_PERCENT   &kp DE_DOLLAR
+                                          &kp LEFT_ALT   &kp SPACE      &kp ENTER       &trans        &kp BACKSPACE
+                                                         &trans         &trans          &none
             >;
         };
 
-        MEDIA {
-            display-name = "MEDIA";
+	brackets {
             bindings = <
-&none  &none  &none  &none   &none   &none     &none   &none              &none             &none            &none  &none
-&none  &none  &none  &none   &none   &none     &none   &none              &none             &none            &none  &none
-&none  &none  &none  &none   &none   &none     &none   &kp C_VOLUME_DOWN  &kp C_MUTE        &kp C_VOLUME_UP  &none  &none
-&none  &none  &none  &none   &none   &none     &none   &kp C_PREV         &kp C_PLAY_PAUSE  &kp C_NEXT       &none  &none
-                     &trans  &trans  &trans    &trans  &trans
-                             &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans                   &trans                    &trans             &trans               &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans     &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET      &kp DE_LESS_THAN   &kp DE_GREATER_THAN  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans     &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_LEFT_BRACE  &kp DE_RIGHT_BRACE   &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans     &kp DE_SLASH             &kp DE_BACKSLASH          &kp DE_PIPE        &kp DE_TILDE         &trans
+                                          &kp LEFT_ALT   &kp SPACE      &kp ENTER       &trans        &kp BACKSPACE
+                                                         &trans         &trans          &none
             >;
         };
 
-        MOUSE {
-            display-name = "MOUSE";
+	num {
             bindings = <
-&trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                        &mkp RCLK  &trans  &mkp LCLK    &trans  &trans
-                                   &trans  &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp K_CALCULATOR  &kp DE_EQUAL  &none      &none      &none            &none
+&trans  &trans  &trans  &trans  &trans  &trans      &kp DE_PLUS       &kp DE_N7     &kp DE_N8  &kp DE_N9  &kp DE_ASTERISK  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp DE_MINUS      &kp DE_N4     &kp DE_N5  &kp DE_N6  &kp DE_SLASH     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp DE_PERIOD     &kp DE_N1     &kp DE_N2  &kp DE_N3  &kp DE_N0        &kp DE_COMMA
+                                          &kp LEFT_ALT   &kp SPACE      &kp ENTER       &trans        &kp BACKSPACE
+                                                         &trans         &trans          &none
             >;
         };
 
-        SCROLL {
-            display-name = "SCROLL";
+	fn {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-                                &trans  &trans    &trans
+&trans  &trans  &trans  &trans        &trans        &trans       &trans  &trans  &trans   &trans   &trans   &trans
+&trans  &trans  &trans  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE   &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans
+&trans  &trans  &trans  &trans        &trans        &trans       &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans
+&trans  &trans  &trans  &trans        &trans        &trans       &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans
+                                          &kp LEFT_ALT   &kp SPACE      &kp ENTER       &trans        &kp BACKSPACE
+                                                         &trans         &trans          &none
             >;
+        };
+
+        Mouse {
+            bindings = <
+&none        &none         &none         &none         &none      &none         &none       &none      &none         &none         &none         &none
+&none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &bt BT_CLR    &bt BT_CLR  &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
+&none        &trans        &trans        &mkp MCLK     &trans     &none         &none       &trans     &mkp MCLK     &trans        &trans        &none
+&bootloader  &trans        &mkp RCLK     &mo 7         &mkp LCLK  &mo 8         &mo 8       &mkp LCLK  &mo 7         &mkp RCLK     &trans        &bootloader
+                                         &mo 8         &mkp LCLK  &mkp RCLK     &mkp RCLK   &mkp LCLK
+                                                       &none      &trans        &trans
+            >;
+        };
+
+        Mouse_scroll {
+            bindings = <
+&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
+&trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
+                           &trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
+                                      &trans     &trans       &trans
+            >;
+
+            trackball-bindings = <&tsl>;
+        };
+
+        Mouse_fine {
+            bindings = <
+&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
+&trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
+                           &trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
+                                      &trans     &trans       &trans
+            >;
+
+            trackball-bindings = <&tmv_fine>;
         };
     };
 };
