@@ -46,7 +46,6 @@
                                                     &kp LEFT_ALT    &kp SPACE         &kp DOWN_ARROW
             >;
 
-            trackball-bindings = <&tmv_coarse>;
         };
 
         s_char {
@@ -125,7 +124,6 @@
                                       &trans     &trans       &trans
             >;
 
-            trackball-bindings = <&tsl>;
         };
 
         Mouse_fine {
@@ -138,7 +136,6 @@
                                       &trans     &trans       &trans
             >;
 
-            trackball-bindings = <&tmv_fine>;
         };
     };
 };
