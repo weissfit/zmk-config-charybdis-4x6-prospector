@@ -2,11 +2,11 @@
 #include <input/processors.dtsi>
 
 #define BASE 0
-#define s_char 1
+#define NAVNUM 1
 #define SYMBOL 2
 #define MEDIA 3
 #define MOUSE 4
-#define Mouse_scroll  7
+#define SCROLL 5 
 
 / {
   split_inputs {
@@ -35,7 +35,7 @@
     };
 
     move {
-      layers = <BASE s_char>;
+      layers = <BASE MOUSE>;
       input-processors = <&auto_mouse_layer MOUSE 400>;
     };
   };
