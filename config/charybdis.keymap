@@ -4,6 +4,16 @@
 #include <dt-bindings/zmk/pointing.h>
 #include "keys_de.h"
 
+#define Base 0
+#define s_char 1
+#define szch 2
+#define brackets 3
+#define num 4
+#define fn 5 
+#define Mouse 6
+#define Mouse_scroll 7 
+#define Mouse_fine 8
+
 / {
     combos { compatible = "zmk,combos"; };
 
