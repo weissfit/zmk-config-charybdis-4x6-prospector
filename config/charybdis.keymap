@@ -14,12 +14,12 @@
 
         Base {
             bindings = <
-&kp ESC    &kp N1      &kp N2    &kp N3           &kp N4           &kp N5             &kp N6         &kp N7         &kp N8        &kp N9         &kp N0    &kp BSPC
-&kp TAB    &kp DE_Z    &kp DE_Y  &kp DE_U         &kp DE_A         &kp DE_Q           &kp DE_P       &kp DE_B       &kp DE_M      &kp DE_L       &kp DE_F  &kp DE_J
-&kp LCTRL  &kp DE_C    &kp DE_S  &kp DE_I         &kp DE_E         &kp DE_O           &kp DE_D       &kp DE_T       &kp DE_N      &kp DE_R       &kp DE_H  &kp DE_SZ
-&kp LSHFT  &lt 6 DE_V  &kp DE_X  &kp DE_U_UMLAUT  &kp DE_A_UMLAUT  &kp DE_O_UMLAUT    &kp DE_W       &kp DE_G       &kp DE_COMMA  &kp DE_PERIOD  &kp DE_K  &kp RSHFT
-                                 &mo 1            &kp SPACE        &kp LEFT_WIN       &lt 2 ENTER    &kp BACKSPACE
-                                                  &kp RETURN       &kp SPACE          &kp BACKSPACE
+&kp ESC    &kp N1    &kp N2    &kp N3           &kp N4           &kp N5             &kp N6         &kp N7         &kp N8        &kp N9         &kp N0    &kp BSPC
+&kp TAB    &kp DE_Z  &kp DE_Y  &kp DE_U         &kp DE_A         &kp DE_Q           &kp DE_P       &kp DE_B       &kp DE_M      &kp DE_L       &kp DE_F  &kp DE_J
+&kp LCTRL  &kp DE_C  &kp DE_S  &kp DE_I         &kp DE_E         &kp DE_O           &kp DE_D       &kp DE_T       &kp DE_N      &kp DE_R       &kp DE_H  &kp DE_SZ
+&kp LSHFT  &kp DE_V  &kp DE_X  &kp DE_U_UMLAUT  &kp DE_A_UMLAUT  &kp DE_O_UMLAUT    &kp DE_W       &kp DE_G       &kp DE_COMMA  &kp DE_PERIOD  &kp DE_K  &kp RSHFT
+                               &mo 1            &kp SPACE        &kp LEFT_WIN       &lt 2 ENTER    &kp BACKSPACE
+                                                &kp RETURN       &kp SPACE          &kp BACKSPACE
             >;
         };
 
