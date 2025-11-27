@@ -1,12 +1,15 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 
-#define BASE 0
-#define NAVNUM 1
-#define SYMBOL 2
-#define MEDIA 3
-#define MOUSE 4
-#define SCROLL 5 
+#define Base 0
+#define s_char 1
+#define szch 2
+#define brackets 3
+#define num 4
+#define fn 5 
+#define Mouse 6
+#define Mouse_scroll 7 
+#define Mouse_fine 8
 
 / {
   split_inputs {
