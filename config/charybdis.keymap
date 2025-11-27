@@ -15,8 +15,6 @@
         };
     };
 
-    /* ---------- LAYERS ---------- */
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -31,7 +29,8 @@
                                                     &kp LEFT_ALT    &kp SPACE         &kp DOWN_ARROW
             >;
 
-            trackball-bindings = <&tmv_coarse>;
+            /* Your firmware only supports &trackball, so: */
+            trackball-bindings = <&trackball>;
         };
 
         /* ---------------- s_char ---------------- */
@@ -104,6 +103,8 @@
                                          &mo 8         &mkp LCLK  &mkp RCLK     &mkp RCLK   &mkp LCLK
                                                        &none      &trans        &trans
             >;
+
+            trackball-bindings = <&trackball>;
         };
 
         /* ---------------- Mouse_scroll ---------------- */
@@ -117,7 +118,7 @@
                                       &trans     &trans       &trans
             >;
 
-            trackball-bindings = <&tsl>;
+            trackball-bindings = <&trackball>;
         };
 
         /* ---------------- Mouse_fine ---------------- */
@@ -131,7 +132,7 @@
                                       &trans     &trans       &trans
             >;
 
-            trackball-bindings = <&tmv_fine>;
+            trackball-bindings = <&trackball>;
         };
     };
 };
