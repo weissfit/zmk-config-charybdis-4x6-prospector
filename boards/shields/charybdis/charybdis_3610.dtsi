@@ -1,7 +1,8 @@
 / {
     zephyr,user {
-        // Mouse & polling behaviors previously set via Kconfig
+        /* --- Power and work queue settings --- */
         zmk,ext-power;
+
         zmk,pd-work-queue-dedicated;
         zmk,pd-dedicated-work-queue-priority = <2>;
         zmk,trackball-poll-duration = <8>;
@@ -47,25 +48,22 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        /*
-         * --- Tracking settings (old Kconfig ↦ DTS) ---
-         */
-        cpi = <400>;                    // CONFIG_PMW3610_CPI
-        cpi-divisor = <2>;              // CONFIG_PMW3610_CPI_DIVIDOR
+        /* --- Mouse speed & behavior --- */
+        cpi = <400>;                 // base CPI
+        cpi-divisor = <2>;           // effective CPI = 200
+        orientation = <1>;           // 1 = 90° rotation
+        invert-x = <1>;              // invert X axis
+        smart-algorithm = <1>;       // enable smart algorithm
 
-        orientation = <90>;             // CONFIG_PMW3610_ORIENTATION_90
-        invert-x;                       // CONFIG_PMW3610_INVERT_X
+        rest1-sample-time-ms = <100>;
+        rest2-sample-time-ms = <200>;
+        rest3-sample-time-ms = <300>;
 
-        smart-algorithm;                // CONFIG_PMW3610_SMART_ALGORITHM
+        run-downshift-time-ms = <500>;
+        rest1-downshift-time-ms = <3000>;
+        rest2-downshift-time-ms = <30000>;
 
-        rest1-sample-time-ms = <100>;   // CONFIG_PMW3610_REST1_SAMPLE_TIME_MS
-        rest2-sample-time-ms = <200>;   // CONFIG_PMW3610_REST2_SAMPLE_TIME_MS
-        rest3-sample-time-ms = <300>;   // CONFIG_PMW3610_REST3_SAMPLE_TIME_MS
-
-        run-downshift-time-ms = <500>;     // CONFIG_PMW3610_RUN_DOWNSHIFT_TIME_MS
-        rest1-downshift-time-ms = <3000>;  // CONFIG_PMW3610_REST1_DOWNSHIFT_TIME_MS
-        rest2-downshift-time-ms = <30000>; // CONFIG_PMW3610_REST2_DOWNSHIFT_TIME_MS
-
+        /* --- Input mapping --- */
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
