@@ -27,25 +27,25 @@
     status = "disabled";
     device = <&trackball_split>;
 
-#    snipe {
-#      layers = <NAVNUM>;
-#      input-processors = <&zip_xy_scaler 1 3>;
-#    };
+    snipe {
+      layers = <Mouse_fine>;
+      input-processors = <&zip_xy_scaler 1 3>;
+    };
 
     scroll {
-      layers = <SCROLL>;
+      layers = <Mouse_scroll>;
       input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 3>, <&zip_xy_to_scroll_mapper>;
     };
 
     move {
-      layers = <BASE MOUSE>;
-      input-processors = <&auto_mouse_layer MOUSE 400>;
+      layers = <Base s_char>;
+      input-processors = <&auto_mouse_layer Base 400>;
     };
   };
 
   auto_mouse_layer: auto_mouse_layer {
     compatible = "zmk,input-processor-temp-layer";
     #input-processor-cells = <2>;
-    require-prior-idle-ms = <50>;  // was 500 -fjw-   
+    require-prior-idle-ms = <500>;
   };
 };
