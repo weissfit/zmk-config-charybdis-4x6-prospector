@@ -35,6 +35,7 @@
     };
 
     move {
+      layers = <all>;
       input-processors = <&auto_mouse_layer MOUSE 400>;
     };
   };
@@ -42,6 +43,6 @@
   auto_mouse_layer: auto_mouse_layer {
     compatible = "zmk,input-processor-temp-layer";
     #input-processor-cells = <2>;
-    require-prior-idle-ms = <500>;
+    require-prior-idle-ms = <50>;  // was 500 -fjw-   
   };
 };
