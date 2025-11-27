@@ -39,7 +39,7 @@
 &kp TAB    &kp LC(LS(DE_T))  &kp LC(W)      &kp LC(LS(TAB))  &kp LC(TAB)    &kp LC(DE_T)        &kp PG_UP  &kp LC(LEFT)   &kp LC(NUMBER_1)  &kp LC(J)     &kp LC(RIGHT)      &kp HOME
 &kp LCTRL  &mo 5             &mo 4          &mo 3            &mo 2          &none               &kp PG_DN  &kp LEFT       &kp UP            &kp DOWN      &kp RIGHT          &kp END
 &kp LSHFT  &kp LEFT          &kp UP         &kp DOWN         &kp RIGHT      &kp LG(LS(DE_Q))    &none      &kp DE_MINUS   &kp DE_SEMICOLON  &kp DE_COLON  &kp DE_UNDERSCORE  &kp ESC
-                                            &kp LEFT_WIN     &kp SPACE      &trans              &kp ENTER  &kp BACKSPACE
+                                            &trans           &kp SPACE      &trans              &kp ENTER  &kp BACKSPACE
                                                              &none          &none               &trans
             >;
         };
