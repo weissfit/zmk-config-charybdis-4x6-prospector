@@ -9,9 +9,9 @@
 #define szch 2
 #define brackets 3
 #define num 4
-#define fn 5 
+#define fn 5
 #define Mouse 6
-#define Mouse_scroll 7 
+#define Mouse_scroll 7
 #define Mouse_fine 8
 
 / {
@@ -40,7 +40,7 @@
 &trans          &kp LG(N1)        &kp LG(N2)  &kp LG(N3)       &kp LG(N4)   &kp LG(N5)      &kp LG(N6)  &kp LG(N7)    &kp LG(N8)        &kp LG(N9)    &kp LG(N0)         &kp ESC
 &kp TAB         &kp LC(LS(DE_T))  &kp LC(W)   &kp LC(LS(TAB))  &kp LC(TAB)  &kp LC(DE_T)    &kp PG_UP   &kp LC(LEFT)  &kp LC(NUMBER_1)  &kp LC(J)     &kp LC(RIGHT)      &kp HOME
 &kp LCTRL       &mo 5             &mo 4       &mo 3            &mo 2        &none           &kp PG_DN   &kp LEFT      &kp UP            &kp DOWN      &kp RIGHT          &kp END
-&kp LEFT_SHIFT  &mo 7             &mkp MCLK   &mkp RCLK        &mkp LCLK    &mkp MB5        &none       &kp DE_MINUS  &kp DE_SEMICOLON  &kp DE_COLON  &kp DE_UNDERSCORE  &kp ESC
+&kp LEFT_SHIFT  &mo 7             &mkp MCLK   &mkp RCLK        &mkp LCLK    &mkp MB4        &none       &kp DE_MINUS  &kp DE_SEMICOLON  &kp DE_COLON  &kp DE_UNDERSCORE  &kp ESC
                                               &trans           &kp SPACE    &trans          &kp ENTER   &kp DELETE
                                                                &none        &none           &trans
             >;
