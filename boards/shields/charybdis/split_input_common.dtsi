@@ -35,7 +35,7 @@
     };
 
     move {
-      layers = <BASE MOUSE S_CHAR>;
+      layers = <BASE MOUSE>;
       input-processors = <&auto_mouse_layer MOUSE 400>;
     };
   };
