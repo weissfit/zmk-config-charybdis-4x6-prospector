@@ -49,11 +49,12 @@
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
         /* --- Mouse speed & behavior --- */
-        cpi = <400>;                 // base CPI
-        cpi-divisor = <2>;           // effective CPI = 200
-        orientation = <1>;           // 1 = 90° rotation
-        invert-x = <1>;              // invert X axis
-        smart-algorithm = <1>;       // enable smart algorithm
+        cpi = <400>;
+        cpi-divisor = <2>;
+
+        orientation = <1>;         // 0 = normal, 1 = 90° rotation
+        invert-x = <1>;
+        smart-algorithm = <1>;
 
         rest1-sample-time-ms = <100>;
         rest2-sample-time-ms = <200>;
@@ -64,8 +65,8 @@
         rest2-downshift-time-ms = <30000>;
 
         /* --- Input mapping --- */
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
+        evt-type = <1>;            // INPUT_EV_REL
+        x-input-code = <0>;        // INPUT_REL_X
+        y-input-code = <1>;        // INPUT_REL_Y
     };
 };
