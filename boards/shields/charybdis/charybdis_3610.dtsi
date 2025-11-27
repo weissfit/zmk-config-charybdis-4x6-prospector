@@ -1,30 +1,32 @@
-#define INPUT_EV_KEY 0x01               /**< Key event */
-#define INPUT_EV_REL 0x02               /**< Relative coordinate event */
-#define INPUT_EV_ABS 0x03               /**< Absolute coordinate event */
-#define INPUT_EV_MSC 0x04               /**< Miscellaneous event */
-#define INPUT_EV_VENDOR_START 0xf0      /**< Vendor specific event start */
-#define INPUT_EV_VENDOR_STOP 0xff       /**< Vendor specific event stop */
+/ {
+    zephyr,user {
+        // Mouse & polling behaviors previously set via Kconfig
+        zmk,ext-power;
+        zmk,pd-work-queue-dedicated;
+        zmk,pd-dedicated-work-queue-priority = <2>;
+        zmk,trackball-poll-duration = <8>;
 
-#define INPUT_REL_X 0x00                /**< Relative X coordinate */
-#define INPUT_REL_Y 0x01                /**< Relative Y coordinate */
-#define INPUT_REL_WHEEL 0x08            /**< Relative wheel coordinate */
-#define INPUT_REL_HWHEEL 0x06           /**< Relative horizontal wheel coordinate */
-#define INPUT_REL_MISC 0x09             /**< Relative misc coordinate */
+        zmk,mouse;
+        zmk,mouse-tick-duration = <6>;
+        zmk,mouse-work-queue-dedicated;
+        zmk,mouse-dedicated-thread-priority = <1>;
+    };
+};
 
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 17)>,
-                <NRF_PSEL(SPIM_MISO, 0, 17)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 17)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 17)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 17)>,
-                <NRF_PSEL(SPIM_MISO, 0, 17)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 17)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 17)>;
             low-power-enable;
         };
     };
@@ -44,7 +46,26 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <800>;
+
+        /*
+         * --- Tracking settings (old Kconfig ↦ DTS) ---
+         */
+        cpi = <400>;                    // CONFIG_PMW3610_CPI
+        cpi-divisor = <2>;              // CONFIG_PMW3610_CPI_DIVIDOR
+
+        orientation = <90>;             // CONFIG_PMW3610_ORIENTATION_90
+        invert-x;                       // CONFIG_PMW3610_INVERT_X
+
+        smart-algorithm;                // CONFIG_PMW3610_SMART_ALGORITHM
+
+        rest1-sample-time-ms = <100>;   // CONFIG_PMW3610_REST1_SAMPLE_TIME_MS
+        rest2-sample-time-ms = <200>;   // CONFIG_PMW3610_REST2_SAMPLE_TIME_MS
+        rest3-sample-time-ms = <300>;   // CONFIG_PMW3610_REST3_SAMPLE_TIME_MS
+
+        run-downshift-time-ms = <500>;     // CONFIG_PMW3610_RUN_DOWNSHIFT_TIME_MS
+        rest1-downshift-time-ms = <3000>;  // CONFIG_PMW3610_REST1_DOWNSHIFT_TIME_MS
+        rest2-downshift-time-ms = <30000>; // CONFIG_PMW3610_REST2_DOWNSHIFT_TIME_MS
+
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
